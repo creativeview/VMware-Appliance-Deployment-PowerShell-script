@@ -1,0 +1,25 @@
+{
+    "config": {
+        "deployType": "vcenter",
+        "deployConfig": {
+            "vcenter": "192.168.10.50",
+            "vcenter_username": "administrator@vsphere.local",
+            "vcenter_password": "password",
+            "host": "192.168.10.51",
+			"vmName": "VCO01",
+			"datastore": "DS1",
+			"diskMode": "thin",
+			"network": "VM Network",
+			"ovfpath": "D:\\Software\\VMware\\vSphere 5.5\\VMware-vCenter-Server-Appliance-5.5.0.5100-1312297_OVF10.ova"
+        },
+        "properties": 
+            {
+			"vami.DNS.VMware_vCenter_Server_Appliance":"192.168.10.55",
+			"vami.gateway.VMware_vCenter_Server_Appliance":"192.168.10.1",
+			"vami.hostname":"vcsa.domain.local",
+			"vami.ip0.VMware_vCenter_Server_Appliance":"192.168.10.56",
+			"vami.netmask0.VMware_vCenter_Server_Appliance":"255.255.255.0",
+            "vm.vmname":"VMware_vCenter_Server_Appliance"
+			}
+    }
+}

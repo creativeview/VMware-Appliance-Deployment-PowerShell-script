@@ -1,0 +1,26 @@
+{
+    "config": {
+        "deployType": "host",
+        "deployConfig": {
+            "host": "192.168.10.51",
+			"host_username": "root",
+            "host_password": "password",
+			"vmName": "VCO01",
+			"datastore": "DS1",
+			"diskMode": "thin",
+			"network": "VM Network",
+			"ovfpath": "D:\\Software\\VMware\\vSphere 5.5 U1\\VMware-vCO-Appliance-5.5.1.0-1617225_OVF10.ova"
+        },
+        "properties": 
+            {
+			"varoot-password":"password",
+            "vcoconf-password":"password",
+            "vami.hostname":"VCO01.domain.local",
+            "vami.ip0.VMware_vCenter_Orchestrator_Appliance":"192.168.10.57",
+			"vami.netmask0.VMware_vCenter_Orchestrator_Appliance":"255.255.255.0",
+			"vami.gateway.VMware_vCenter_Orchestrator_Appliance":"192.168.10.1",
+			"vami.DNS.VMware_vCenter_Orchestrator_Appliance":"192.168.10.55",
+            "vm.vmname":"VMware_vCenter_Orchestrator_Appliance"
+			}
+    }
+}
