@@ -63,6 +63,7 @@ Note don't change the `vm.vmname` property.
 			"datastore": "DS1",
 			"diskMode": "thin",
 			"network": "VM Network",
+			"powerOn": true,
 			"ovfpath": "D:\\VMware-vCO-Appliance-5.5.1.0-1617225_OVF10.ova"
         },
         "properties": 
