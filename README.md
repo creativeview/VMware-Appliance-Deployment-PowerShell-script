@@ -81,4 +81,4 @@ Note don't change the `vm.vmname` property.
 ```
 
 ##More Information
-For more information please read the following blog post: 
+For more information please read the following blog post: http://creativeview.co.uk/vmware-appliance-deployment-powershell-script/
