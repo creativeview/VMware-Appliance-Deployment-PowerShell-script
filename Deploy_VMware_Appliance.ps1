@@ -10,10 +10,14 @@
   Path to the appliances deployment configuration.
  
 .NOTES
-  Version:        1.0
+  Version:        1.1
   Author:         David Balhrrie
+  Last Updated:   04/08/14
   Creation Date:  27/07/14
-  Purpose/Change: Initial script development
+.VERSION HISTORY
+  1.1 04/08/14 Added option to control power on of vm
+  1.0 27/07/14 Initial Version.
+  
   
 .EXAMPLE
   Deploy_VMware_Appliance.ps1 -configpath 'd:\config_file\vco_5_5_config_host.json'
@@ -62,7 +66,9 @@ function Import-OVF
             $session = Get-View -Id SessionManager
             $ticket = $session.AcquireCloneTicket()
             $parasArry += "--I:targetSessionTicket=$($ticket)"
-            $parasArry += "--powerOn"
+            if ($deployConfig.powerOn -eq $true){
+                $parasArry += "--powerOn"
+            }
         }
         $parasArry += "--name="+$deployConfig.vmName
         $parasArry += "--datastore="+$deployConfig.datastore
@@ -188,9 +194,14 @@ Import-OVF -parasArry $parasArry -deployConfig $configObj.config.deployConfig -d
 
 if ($configObj.config.deployType.ToLower() -eq "host")
 {
-    Write-host "ESX version: "$esxVer
     Set-ovfProperties -vmname $configObj.config.deployConfig.vmName -esxVer $esxVer -ovfParasArry $ovfParas | Out-Null
+    if ($configObj.config.deployConfig.powerOn -eq $true){
+        Start-VM -VM $configObj.config.deployConfig.vmName | Out-Null
+    }
+    
 }
+
+Write-host ("The VM " + $configObj.config.deployConfig.vmName + "has been deployed.")
 
 
 Disconnect-VIServer -Force -confirm:$false

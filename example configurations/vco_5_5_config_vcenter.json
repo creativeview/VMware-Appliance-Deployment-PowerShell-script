@@ -10,6 +10,7 @@
 			"datastore": "DS1",
 			"diskMode": "thin",
 			"network": "VM Network",
+			"powerOn": true,
 			"ovfpath": "D:\\Software\\VMware\\vSphere 5.5 U1\\VMware-vCO-Appliance-5.5.1.0-1617225_OVF10.ova"
         },
         "properties": 

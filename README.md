@@ -31,6 +31,7 @@ Note don't change the `vm.vmname` property.
 			"datastore": "DS1",
 			"diskMode": "thin",
 			"network": "VM Network",
+			"powerOn": true,
 			"ovfpath": "D:\\Mware-vCenter-Server-Appliance-5.5.0.5100-1312297_OVF10.ova"
         },
         "properties": 
